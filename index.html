@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.css" />
+
+    <title>Slot Machine</title>
+  </head>
+  <body>
+    <div class="overlay">
+      <!-- <button id="autoSpin">
+        <span>AUTO</span>
+      </button> -->
+
+      <div class="slots">
+        <div class="reel"></div>
+        <div class="reel"></div>
+        <div class="reel"></div>
+      </div>
+
+      <div id="announce" class="debug"></div>
+
+      <img
+        class="banner"
+        style="position: fixed; left: 0; top: 0; height: 100vh; width: auto"
+        src="./assets/slotreel.webp"
+      />
+
+      <button id="spin" class="spin">SPIN</button>
+    </div>
+
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
