@@ -1,6 +1,11 @@
+<a id="badges"></a>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # Casino Slots
 
-Casino Slots is a simple casino slot game built using HTML, CSS, and Vanilla JavaScript.
+![logo](./assets/casinoSlotProject.jpg)
+
+Get ready to experience the thrill of Las Vegas right from your browser! Casino Slots is a captivating single-player game built with HTML, SASS, and Vanilla JavaScript. Immerse yourself in a beautifully designed interface and enjoy the classic slot machine experience. While this version offers a straightforward gameplay loop, keep an eye out for future updates that might introduce additional features and exciting twists!
 
 ## Screenshots
 
@@ -14,8 +19,6 @@ Inspiration:
 
 Wallpaper:
 [unsplash](https://www.unsplash.com)
-
-![screenshot](./assets/casino.jpg)
 
 ## Contact
 
