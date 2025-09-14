@@ -58,6 +58,11 @@ const roll = (reel, offset = 0) => {
         reel.style.backgroundPositionY = `${normTargetBackgroundPositionY}px`;
         // Resolve this promise
         resolve(delta % num_icons);
+        // Enable button again
+        if (offset == 2) {
+          debugEl.spinBtn = 'false';
+          spinBtn.disabled = false;
+        }
       },
       (8 + 1 * delta) * time_per_icon + offset * 150
     );
@@ -69,7 +74,8 @@ const roll = (reel, offset = 0) => {
  */
 function rollAll() {
   debugEl.textContent = 'spinning...';
-
+  debugEl.spinBtn = 'true';
+  spinBtn.disabled = true;
   const reelsList = document.querySelectorAll('.slots > .reel');
 
   Promise
