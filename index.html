@@ -2,33 +2,97 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Casino Slots &mdash; Free Browser Slot Machine Game</title>
+    <meta
+      name="description"
+      content="Spin the reels in this free browser slot machine. Place play-money bets, chase the jackpot, and watch the screen light up on a big win. No download, no real money."
+    />
+    <meta name="theme-color" content="#1a0b0b" />
+    <link rel="canonical" href="https://8bitginger.github.io/casinoSlot/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Casino Slots &mdash; Free Browser Slot Machine Game" />
+    <meta
+      property="og:description"
+      content="Spin the reels, place play-money bets, and chase the jackpot in this free browser slot machine."
+    />
+    <meta property="og:image" content="https://8bitginger.github.io/casinoSlot/assets/casinoSlotProject.jpg" />
+    <meta property="og:url" content="https://8bitginger.github.io/casinoSlot/" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Casino Slots &mdash; Free Browser Slot Machine Game" />
+    <meta
+      name="twitter:description"
+      content="Spin the reels, place play-money bets, and chase the jackpot in this free browser slot machine."
+    />
+    <meta name="twitter:image" content="https://8bitginger.github.io/casinoSlot/assets/casinoSlotProject.jpg" />
+
     <link rel="stylesheet" href="./styles/main.css" />
     <link rel="icon" href="./assets/webCasino.png" />
-
-    <title>Slot Machine</title>
   </head>
   <body>
+    <div class="light-sweep" aria-hidden="true"></div>
+    <canvas id="confetti" aria-hidden="true"></canvas>
+
+    <div id="characterModal" class="character-modal" hidden></div>
+
     <div class="overlay">
-      <!-- <button id="autoSpin">
-        <span>AUTO</span>
-      </button> -->
+      <header class="hud">
+        <button id="changeCharacter" class="dealer-btn" hidden aria-label="Change dealer">
+          <img id="dealerThumb" src="" alt="" />
+        </button>
 
-      <div class="slots">
-        <div class="reel"></div>
-        <div class="reel"></div>
-        <div class="reel"></div>
-      </div>
+        <div class="hud__stat">
+          <span class="hud__label">Balance</span>
+          <span id="balance" class="hud__value">0</span>
+        </div>
 
-      <div id="announce" class="debug"></div>
+        <div class="hud__bet">
+          <span class="hud__label">Bet</span>
+          <div class="hud__bet-controls">
+            <button id="betDown" class="chip-btn" aria-label="Decrease bet">&minus;</button>
+            <span id="bet" class="hud__value">0</span>
+            <button id="betUp" class="chip-btn" aria-label="Increase bet">&plus;</button>
+          </div>
+        </div>
+
+        <div class="hud__stat">
+          <span class="hud__label">Win</span>
+          <span id="lastWin" class="hud__value hud__value--win">0</span>
+        </div>
+      </header>
+
+      <main class="slots" aria-live="polite">
+        <div class="reel"></div>
+        <div class="reel"></div>
+        <div class="reel"></div>
+      </main>
+
+      <p id="message" class="message" aria-live="polite"></p>
 
       <img
         class="banner"
-        style="position: fixed; left: 0; top: 0; height: 100vh; width: auto"
         src="./assets/slotreel.webp"
+        alt=""
+        aria-hidden="true"
       />
 
-      <button id="spin" class="spin">SPIN</button>
+      <div class="controls">
+        <button id="spin" class="spin">SPIN</button>
+        <button id="rebuy" class="rebuy" hidden>Out of credits &mdash; Rebuy</button>
+      </div>
+
+      <p class="disclaimer">Play-money only &mdash; no real wagering, no cash value.</p>
+    </div>
+
+    <div id="characterDock" class="dealer-dock" hidden aria-live="polite">
+      <img id="dealerPortrait" class="dealer-dock__portrait" src="" alt="" />
+      <div class="dealer-dock__bubble">
+        <span id="dealerName" class="dealer-dock__name"></span>
+        <p id="dealerSpeech" class="dealer-dock__speech"></p>
+      </div>
     </div>
 
     <script src="./scripts/main.js"></script>
